@@ -1,0 +1,5 @@
+FUNC csv_handler.read_csv 26.9805 1650965284.1958 27.0469 1650965284.1968 0
+CMDLINE C:\Users\jamie\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\python.exe demo.py
+MEM 1.667969 1650965283.9772
+MEM 18.265625 1650965284.0895
+MEM 27.011719 1650965284.1968

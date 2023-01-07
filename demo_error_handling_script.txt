@@ -1,0 +1,4 @@
+read file1.csv csv1
+read file2.csv csv2
+join csv1 csv2 csv5
+write csv5 error_scenario.csv

@@ -1,0 +1,61 @@
+Usage: py csv_processor.py [OPTION] [SCRIPT]
+
+-s, --Script -> Executes the commands contained within the Input Script
+-h, --Help -> Display this help
+
+The program splits items in each row using comma (,) as the delimiter.
+In order to stop a split include item within double quotes ("")) .i.e an address may contain a comma
+E.g. "9 Blue Lane, Gawleys Gate"
+This ensures the address is seen as a single item and not split incorrectly
+If you wish for a double quote to be part of the item preceed it with a blackslash i.e \"Help\" = "Help"
+
+
+Available commands:
+
+read - read in selected CSV
+    E.g. read filename var_name_to_store_result_in
+write - write records to CSV
+    E.g. write csv_var filename
+join - join 2 CSVs based on a key into 1 CSV
+    E.g. join csv1_var csv2_var var_name_to_store_result_in
+concat - combine 2 CSVs which share the same headers into 1 CSV
+    E.g. concat csv1_var csv2_var var_name_to_store_result_in
+filter - filter the records within a CSV based on a particular header and value
+    E.g. filter csv_var column_name value operator True(numeric)/False(non_numeric) var_name_to_store_result_in
+    Operators available:
+    >, <, >=, <, ==, !=
+select - extract particular columns from a CSV to create a new CSV
+    E.g. select csv_var [column_header1,column_header2, ...] var_name_to_store_result_in
+order - order the records within a CSV based on a particular header either descending or ascending
+    E.g. order csv_var operator var_name_to_store_result_in
+    Operators available:
+    > - ascending
+    < - descending
+subtract - remove records from a CSV which are present in another CSV based on the key field
+    E.g. subtract csv1_var csv2_var var_name_to_store_result_in
+extract - obtain records from a CSV which are present in another CSV based on the key field
+    E.g. extract csv1_var csv2_var var_name_to_store_result_in
+rename - change the name of a header within a CSV
+    E.g. rename csv_var old_colunm_name new_column_name var_name_to_store_result_in
+update - update a field within a CSV based on a particular key
+    E.g. update csv_var key column_name new_value var_name_to_store_result_in
+insert_column - add new column to CSV with default value populated in each row
+    E.g. insert_column csv_var new_column_name default_value var_name_to_store_result_in
+delete_column - remove column from CSV
+    E.g. delete_column csv_var column_name var_name_to_store_result_in
+insert_row - add new row to CSV using values passed in
+    E.g. insert_row csv_var key [remaining_field_values] var_name_to_store_result_in
+delete_row - remove row from CSV based on key provided
+    E.g. delete_row csv_var key var_name_to_store_result_in
+echo - output text to console
+    E.g. echo text to be output
+min - extracts row(s) with lowest value for selected numeric column
+    E.g. min csv_var column_name var_name_to_store_result_in
+max - extracts row(s) with highest value for selected numeric column
+    E.g. max csv_var column_name var_name_to_store_result_in
+count - outputs number of rows within file
+    E.g. count csv_var
+avg - outputs average for selected numeric column
+    E.g. avg csv_var column_name
+stand_dev - outputs standard deviation for selected numeric column
+    E.g. stand_dev csv_var column_name

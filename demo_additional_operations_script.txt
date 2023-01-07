@@ -1,0 +1,22 @@
+read demo.csv csv1
+read keys.csv csv2
+select csv1 mark csv3
+write csv3 select.csv
+extract csv1 csv2 csv4
+write csv4 extract.csv
+rename csv1 mark score csv5
+write csv5 rename.csv
+update csv1 4 course "Computer Science" csv6
+write csv6 update.csv
+insert_column csv1 address "\"9 Grants Lane, Gawleys Gate\"" csv7
+write csv7 insert_column.csv
+delete_column csv7 address csv8
+write csv8 delete_column.csv
+insert_row csv1 6 "[Joe,Lavelle,jlavelle@email.com,Computer Science,55]" csv9
+write csv9 insert_row.csv
+delete_row csv9 6 csv10
+write csv10 delete_row.csv
+min csv1 mark csv11
+write csv11 min.csv
+max csv1 mark csv12
+write csv12 max.csv

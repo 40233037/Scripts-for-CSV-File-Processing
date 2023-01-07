@@ -1,0 +1,23 @@
+read student_details.csv csv1
+read class1_practical1_results.csv csv2
+read class2_practical1_results.csv csv3
+echo Obtaining students who did not attend practical 1...
+concat csv2 csv3 csv4
+subtract csv1 csv4 csv5
+write csv5 students_who_did_not_attend_prac1.csv
+echo Obtaining number of students who passed practical 1...
+join csv1 csv4 csv6
+order csv6 mark < csv7
+filter csv7 mark 40 >= True csv8
+count csv8
+echo Obtaining details of students who passed practical 1...
+write csv8 students_who_passed_practical1.csv
+echo Obtaining number of students who failed practical 1...
+filter csv7 mark 40 < True csv9
+count csv9
+echo Obtaining details of students who failed practical 1...
+write csv9 students_who_failed_practical1.csv
+echo Obtaining average mark from practical 1...
+avg csv7 mark
+echo Obtaining spread of results for practical 1...
+stand_dev csv7 mark

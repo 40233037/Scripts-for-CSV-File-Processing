@@ -1,0 +1,12 @@
+read
+write
+join
+concat
+select
+filter
+order
+min
+max
+avg
+stand_dev
+count
